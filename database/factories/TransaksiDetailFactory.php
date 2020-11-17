@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Barang;
+use App\Models\Transaksi_Detail;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class BarangFactory extends Factory
+class TransaksiDetailFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Barang::class;
+    protected $model = Transaksi_Detail::class;
 
     /**
      * Define the model's default state.
@@ -22,10 +22,8 @@ class BarangFactory extends Factory
     public function definition()
     {
         return [
-            'nama' => $this->faker->word,
-            'kategori_id' => 1,
-            'kategori_id' => Kategori::factory(),
-            'harga_jual' => $this->faker->randomNumber(),
+            'transaksi_id' => Transaksi::factory(),
+            'barang_id' => Barang::factory(),
             'harga_beli' => $this->faker->randomNumber(),
             'jumlah' => $this->faker->numberBetween(1, 1000),
             'discount' => 0
